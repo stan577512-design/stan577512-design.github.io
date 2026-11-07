@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StamFit Training</title>
+<style>
+  body{
+    background:#0b0d10; color:#f2f4f6; font-family:"Segoe UI",Roboto,-apple-system,sans-serif;
+    max-width:640px; margin:0 auto; padding:40px 24px 60px; line-height:1.7;
+  }
+  h1{color:#8fe14a; font-size:28px; margin-bottom:8px;}
+  p{color:#dfe3e8; font-size:16px;}
+  a{color:#8fe14a;}
+  .lang-switch{display:flex; gap:8px; margin-bottom:28px; flex-wrap:wrap;}
+  .lang-btn{
+    padding:8px 16px; border-radius:10px; border:1px solid #242932; background:#171b21;
+    color:#8b93a1; font-size:13px; cursor:pointer;
+  }
+  .lang-btn.active{border-color:#8fe14a; color:#8fe14a; background:rgba(143,225,74,.08);}
+  .lang-block{display:none;}
+  .lang-block.active{display:block;}
+  .footer{margin-top:48px; color:#565d68; font-size:12px; text-align:center;}
+</style>
+</head>
+<body>
+  <div class="lang-switch">
+    <button class="lang-btn active" id="btn-ru" onclick="setLang('ru')">Русский</button>
+    <button class="lang-btn" id="btn-uz" onclick="setLang('uz')">Oʻzbekcha</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">English</button>
+  </div>
+
+  <div class="lang-block active" id="block-ru">
+    <h1>StamFit Training</h1>
+    <p>Приложение для тренировок в зале: персональная программа, учёт прогресса, вес тела, дневник питания и напоминания о тренировках.</p>
+    <p><a href="https://stan577512-design.github.io/stamfit-privacy/privacy-policy.html">Политика конфиденциальности</a></p>
+    <p>Контакты: <a href="mailto:support.stamfit@gmail.com">support.stamfit@gmail.com</a></p>
+  </div>
+
+  <div class="lang-block" id="block-uz">
+    <h1>StamFit Training</h1>
+    <p>Zalda mashq qilish uchun ilova: shaxsiy dastur, progressni kuzatish, tana vazni, ovqatlanish kundaligi va mashq eslatmalari.</p>
+    <p><a href="https://stan577512-design.github.io/stamfit-privacy/privacy-policy.html">Maxfiylik siyosati</a></p>
+    <p>Aloqa: <a href="mailto:support.stamfit@gmail.com">support.stamfit@gmail.com</a></p>
+  </div>
+
+  <div class="lang-block" id="block-en">
+    <h1>StamFit Training</h1>
+    <p>A gym workout app: a personal program, progress tracking, body weight, a food diary, and workout reminders.</p>
+    <p><a href="https://stan577512-design.github.io/stamfit-privacy/privacy-policy.html">Privacy Policy</a></p>
+    <p>Contact: <a href="mailto:support.stamfit@gmail.com">support.stamfit@gmail.com</a></p>
+  </div>
+
+  <div class="footer">© StamFit 2026</div>
+
+<script>
+function setLang(lang){
+  ['ru','uz','en'].forEach(function(l){
+    document.getElementById('block-'+l).classList.toggle('active', lang===l);
+    document.getElementById('btn-'+l).classList.toggle('active', lang===l);
+  });
+  document.documentElement.lang = lang;
+}
+</script>
+</body>
+</html>
